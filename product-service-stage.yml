@@ -10,6 +10,9 @@ spring:
     uris: http://elasticsearch:9200
     repositories:
       enabled: true
+  redis:
+    host: redis
+    port: 6379
 
   kafka:
     bootstrap-servers: kafka:9092
