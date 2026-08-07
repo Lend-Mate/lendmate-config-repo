@@ -1,4 +1,17 @@
 otel:
   exporter:
     otlp:
-      endpoint: http://localhost:4318
+      endpoint: http://jaeger:4318
+      metrics:
+        endpoint: http://prometheus:9090/api/v1/otlp/v1/metrics
+      logs:
+        endpoint: http://loki:3100/otlp/v1/logs
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0    
+
+logging:
+  level:
+    root: debug

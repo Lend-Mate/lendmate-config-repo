@@ -24,7 +24,8 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: health, info, prometheus
+
 otel:
   resource:
     attributes:
@@ -35,6 +36,12 @@ otel:
     exporter: otlp
   metrics:
     exporter: otlp
+  instrumentation:
+    micrometer:
+      enabled: true
+  metric:
+    export:
+      interval: 60000
   java:
     disabled:
       resource:
