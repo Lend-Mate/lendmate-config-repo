@@ -1,0 +1,45 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/notification_service_db_dev
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    show-sql: true
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          connectiontimeout: 5000 # max time to connect to smtp server
+          timeout: 5000  # max time to wait response from server
+          writetimeout: 5000  # max time to send mail context to server
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: notification-service
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+        spring.json.value.default.type: com.lendmate.notification_service.kafka.OrderEvent
+
+  cloud:
+    openfeign:
+      client:
+        config:
+          product-service:
+            url: http://localhost:8080
+          user-service:
+            url: http://localhost:8081
+
+logging:
+  level:
+    root: info
+

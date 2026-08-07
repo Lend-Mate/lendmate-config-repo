@@ -1,0 +1,41 @@
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+server:
+  forward-headers-strategy: framework
+  shutdown: immediate
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  main:
+    allow-bean-definition-overriding: true
+
+aws:
+  accessKeyId: ${AWS_ACCESS_KEY_ID}
+  secretAccessKey: ${AWS_SECRET_ACCESS_KEY}
+  region: ${AWS_REGION}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+otel:
+  resource:
+    attributes:
+      service.name: ${spring.application.name}
+  logs:
+    exporter: otlp
+  traces:
+    exporter: otlp
+  metrics:
+    exporter: otlp
+  java:
+    disabled:
+      resource:
+        providers: io.opentelemetry.instrumentation.resources.ProcessResourceProvider

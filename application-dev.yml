@@ -1,0 +1,4 @@
+otel:
+  exporter:
+    otlp:
+      endpoint: http://localhost:4318
