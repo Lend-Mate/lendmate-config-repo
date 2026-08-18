@@ -1,12 +1,3 @@
-otel:
-  exporter:
-    otlp:
-      endpoint: http://jaeger:4318
-      metrics:
-        endpoint: http://prometheus:9090/api/v1/otlp/v1/metrics
-      logs:
-        endpoint: http://loki:3100/otlp/v1/logs
-
 management:
   tracing:
     sampling:

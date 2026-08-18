@@ -24,6 +24,10 @@ spring:
       properties:
         spring.json.trusted.packages: "*"
         spring.json.value.default.type: com.project.lendmate.event.StockDecreaseEvent
+aws:
+  accessKeyId: ${AWS_ACCESS_KEY_ID}
+  secretAccessKey: ${AWS_SECRET_ACCESS_KEY}
+  region: ${AWS_REGION}
 
 logging:
   level:

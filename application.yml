@@ -15,34 +15,11 @@ spring:
   main:
     allow-bean-definition-overriding: true
 
-aws:
-  accessKeyId: ${AWS_ACCESS_KEY_ID}
-  secretAccessKey: ${AWS_SECRET_ACCESS_KEY}
-  region: ${AWS_REGION}
-
 management:
   endpoints:
     web:
       exposure:
         include: health, info, prometheus
-
-otel:
-  resource:
-    attributes:
-      service.name: ${spring.application.name}
-  logs:
-    exporter: otlp
-  traces:
-    exporter: otlp
   metrics:
-    exporter: otlp
-  instrumentation:
-    micrometer:
-      enabled: true
-  metric:
-    export:
-      interval: 60000
-  java:
-    disabled:
-      resource:
-        providers: io.opentelemetry.instrumentation.resources.ProcessResourceProvider
+    tags:
+      application: ${spring.application.name}

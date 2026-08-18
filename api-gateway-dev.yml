@@ -96,6 +96,11 @@ spring:
                 - Path=/notification-service/v3/api-docs
               filters:
                 - RewritePath=/notification-service/(?<segment>.*), /${segment}
+          httpclient:
+            wiretap: true
+jwt:
+  secret: ${JWT_SECRET}
+
 management:
   endpoints:
     web:
@@ -108,3 +113,5 @@ logging:
   level:
     org.springframework.cloud.gateway: DEBUG
     org.springframework.web.reactive: DEBUG
+    io.opentelemetry: DEBUG
+    reactor.netty.http.client: DEBUG
