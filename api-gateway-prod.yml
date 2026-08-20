@@ -105,7 +105,15 @@ management:
   endpoints:
     web:
       exposure:
-        include: gateway,health,info
+        include: "*" # actuator / metrics / health endpointlerini dışarı açar
+  metrics:
+    tags:
+      # Grafana dashboard'larının uygulamayı ayırt etmesi için service.name şarttır
+      application: ${spring.application.name:api-gateway}
+  tracing:
+    sampling:
+      probability: 1.0
+
 gateway:
   security:
     enabled: true
