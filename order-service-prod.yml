@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://postgres:5432/order_service_db_dev
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    show-sql: true
+  kafka:
+    bootstrap-servers: kafka:9092
+    producer:
+      properties:
+        spring.json.add.type.headers: false
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+  cloud:
+    openfeign:
+      client:
+        config:
+          product-service:
+            url: http://product-service:8080
+          user-service:
+            url: http://user-service:8081
+    

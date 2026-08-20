@@ -39,7 +39,3 @@ spring:
           user-service:
             url: http://localhost:8081
 
-logging:
-  level:
-    root: info
-

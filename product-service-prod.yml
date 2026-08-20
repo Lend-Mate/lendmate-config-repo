@@ -21,24 +21,7 @@ spring:
         spring.json.trusted.packages: "*"
         spring.json.value.default.type: com.project.lendmate.event.StockDecreaseEvent
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*" # actuator / metrics / health endpointlerini dışarı açar
-  metrics:
-    tags:
-      # Grafana dashboard'larının uygulamayı ayırt etmesi için service.name şarttır
-      application: ${spring.application.name:product-service}
-  tracing:
-    sampling:
-      probability: 1.0
-
 aws:
   accessKeyId: ${AWS_ACCESS_KEY_ID}
   secretAccessKey: ${AWS_SECRET_ACCESS_KEY}
   region: ${AWS_REGION}
-
-logging:
-  level:
-    root: INFO

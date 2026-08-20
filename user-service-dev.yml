@@ -16,7 +16,3 @@ spring:
 gateway:
   security:
     enabled: false
-
-logging:
-  level:
-    root: debug

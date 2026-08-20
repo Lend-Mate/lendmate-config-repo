@@ -101,17 +101,6 @@ spring:
 jwt:
   secret: ${JWT_SECRET}
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: gateway,health,info
 gateway:
   security:
     enabled: false
-logging:
-  level:
-    org.springframework.cloud.gateway: DEBUG
-    org.springframework.web.reactive: DEBUG
-    io.opentelemetry: DEBUG
-    reactor.netty.http.client: DEBUG
