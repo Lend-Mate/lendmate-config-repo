@@ -1,13 +1,3 @@
-springdoc:
-  api-docs:
-    path: /v3/api-docs
-  swagger-ui:
-    path: /swagger-ui.html
-
-server:
-  forward-headers-strategy: framework
-  shutdown: immediate
-
 spring:
   jpa:
     hibernate:
@@ -19,7 +9,11 @@ management:
   endpoints:
     web:
       exposure:
-        include: health, info, prometheus
+        include: "*" # actuator / metrics / health endpointlerini dışarı açar
   metrics:
     tags:
-      application: ${spring.application.name}
+      # Grafana dashboard'larının uygulamayı ayırt etmesi için service.name şarttır
+      application: ${spring.application.name:api-gateway}
+  tracing:
+    sampling:
+      probability: 1.0
