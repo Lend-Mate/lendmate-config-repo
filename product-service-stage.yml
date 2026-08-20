@@ -1,0 +1,39 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://postgres:5432/product_service_db_dev
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    show-sql: true
+
+  elasticsearch:
+    uris: http://elasticsearch:9200
+    repositories:
+      enabled: true
+  data:
+    redis:
+      host: redis
+      port: 6379
+
+  kafka:
+    bootstrap-servers: kafka:9092
+    consumer:
+      group-id: product-service
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+        spring.json.value.default.type: com.project.lendmate.event.StockDecreaseEvent
+aws:
+  accessKeyId: ${AWS_ACCESS_KEY_ID}
+  secretAccessKey: ${AWS_SECRET_ACCESS_KEY}
+  region: ${AWS_REGION}
+
+logging:
+  level:
+    root: info
+management:
+  health:
+    elasticsearch:
+      enabled: false
+
