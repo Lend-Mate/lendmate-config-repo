@@ -5,6 +5,8 @@ spring:
     password: ${DB_PASSWORD}
   jpa:
     show-sql: true
+    hibernate:
+      ddl-auto: validate
   mail:
     host: smtp.gmail.com
     port: 587

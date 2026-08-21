@@ -1,10 +1,8 @@
 spring:
-  datasource:
-    url: jdbc:postgresql://postgres:5432/notification_service_db
-    username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
   jpa:
-    show-sql: true
+    show-sql: false
+    hibernate:
+      ddl-auto: validate
   mail:
     host: smtp.gmail.com
     port: 587
@@ -38,5 +36,3 @@ spring:
             url: http://product-service:8080
           user-service:
             url: http://user-service:8081
-
-
