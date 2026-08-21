@@ -21,3 +21,10 @@ management:
 logging:
   level:
     root: info
+
+gateway:
+  security:
+    enabled: false
+
+jwt:
+  secret: ${JWT_SECRET}

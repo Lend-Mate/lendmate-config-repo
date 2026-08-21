@@ -94,9 +94,3 @@ spring:
             - Path=/notification-service/v3/api-docs
           filters:
             - RewritePath=/notification-service/(?<segment>.*), /${segment}
-jwt:
-  secret: ${JWT_SECRET}
-
-gateway:
-  security:
-    enabled: true

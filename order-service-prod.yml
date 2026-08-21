@@ -8,13 +8,4 @@ spring:
         spring.json.add.type.headers: false
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-
-  cloud:
-    openfeign:
-      client:
-        config:
-          product-service:
-            url: http://product-service:8080
-          user-service:
-            url: http://user-service:8081
     
