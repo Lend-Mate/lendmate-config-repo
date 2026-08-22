@@ -28,5 +28,5 @@ spring:
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties:
         spring.json.trusted.packages: "*"
-        spring.json.value.default.type: com.lendmate.notification_service.kafka.OrderEvent
+        spring.json.value.default.type: com.lendmate.notificationservice.kafka.OrderEvent
 
