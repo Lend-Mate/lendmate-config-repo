@@ -17,6 +17,12 @@ management:
   tracing:
     sampling:
       probability: 1.0
+otel:
+  instrumentation:
+    jvm:
+      enabled: true
+    micrometer:
+      enabled: true
 
 logging:
   level:
