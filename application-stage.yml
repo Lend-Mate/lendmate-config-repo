@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    openfeign:
+      client:
+        config:
+          product-service:
+            url: http://product-service:8080
+          user-service:
+            url: http://user-service:8081
