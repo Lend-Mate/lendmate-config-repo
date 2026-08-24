@@ -20,6 +20,9 @@ spring:
       properties:
         spring.json.trusted.packages: "*"
         spring.json.value.default.type: com.lendmate.productservice.event.StockDecreaseEvent
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
 
 aws:
   accessKeyId: ${AWS_ACCESS_KEY_ID}
