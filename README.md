@@ -1,6 +1,6 @@
 # HemenKirala Config Repository
 
-Bu depo, LendMate mikroservis ekosisteminin merkezi konfigürasyon deposudur. Spring Cloud Config Server tarafından okunarak API Gateway ve iş servislerine ortam bazlı ayarlar sağlar. Uygulama kaynak kodu veya iş mantığı içermez; servislerin bağlantı, altyapı ve çalışma zamanı ayarlarını tek yerde yönetir.
+Bu depo, HemenKirala mikroservis ekosisteminin merkezi konfigürasyon deposudur. Spring Cloud Config Server tarafından okunarak API Gateway ve iş servislerine ortam bazlı ayarlar sağlar. Uygulama kaynak kodu veya iş mantığı içermez; servislerin bağlantı, altyapı ve çalışma zamanı ayarlarını tek yerde yönetir.
 
 ## İçerik
 
