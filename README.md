@@ -76,4 +76,4 @@ Swagger arayüzü `/swagger-ui.html` yolunda sunulur. Servis dokümantasyonları
 
 ## Güvenlik Notu
 
-Actuator uçları ortak konfigürasyonda geniş biçimde dışa açılmıştır ve gateway güvenliği varsayılan olarak devre dışıdır. Bu ayarlar yalnızca kontrollü geliştirme/test ortamlarında kullanılmalı; stage ve prod dağıtımlarında erişim kontrolü, ağ kısıtlamaları ve gizli değer yönetimi ayrıca doğrulanmalıdır.
+Actuator uçları ortak konfigürasyonda geniş biçimde dışa açılmıştır ve gateway güvenliği varsayılan olarak devre dışıdır. Bu ayarlar yalnızca kontrollü geliştirme/test ortamında kullanılmaktadır. Prod deploy pipeline'ında actuator portu/route'u dış ağdan erişime kapatılacak (yalnızca internal network / localhost üzerinden erişilebilir olacaktır).
